@@ -1,0 +1,23 @@
+server:
+  port: 8200
+  servlet:
+    contextPath: /api/account
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:8761/eureka/
+spring:
+  main:
+   allow-bean-definition-overriding: true
+  application:
+    name: account-service
+  kafka:
+    consumer:
+      group-id: snowball-microservice
+      auto-offset-reset: earliest
+  data:
+    mongodb:
+      database: account
+logging:
+  file:
+    name: spring-elk-log.log
